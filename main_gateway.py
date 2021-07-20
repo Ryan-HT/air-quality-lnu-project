@@ -166,6 +166,9 @@ def listen_to_lora():
 
         time.sleep(0.2)
 
+# Handle buffer Exception
+micropython.alloc_emergency_exception_buf(100)
+
 # Initializing LoRa for the Gateway
 start_lora()
 time.sleep(1)
