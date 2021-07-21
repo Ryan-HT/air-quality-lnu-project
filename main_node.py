@@ -117,7 +117,6 @@ while numberOfReading < 10:
         print('Insoor Humidity: {:3.2f}'.format(indoor.humidity/1.0))
         print("Outdoor Temperature: %d C" % outdoor.temperature)
         print("Outdoor Humidity: %d %%" % outdoor.humidity)
-        ccs.readSensorData()
         co2 = ccs.eCO2
         voc = ccs.tVOC
         eCO2 += ccs.eCO2
