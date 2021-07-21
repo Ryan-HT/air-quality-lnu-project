@@ -13,6 +13,12 @@ MQTT_TEMPERATURE_FEED = "devices/temperature"
 MQTT_HUMIDITY_FEED = "devices/humidity"
 MQTT_POLLUTANT_FEED = "devices/pollutant"
 
+#SSL
+SSL_FILES = dict([
+    ("ca_certs", "/flash/cert/CA.pem"),
+    ("keyfile", "/flash/cert/client-key.pem"),
+    ("certfile", "/flash/cert/clent-cert.pem")
+])
 
 # Other variables
 WDT_TIMEOUT = const(600000)
