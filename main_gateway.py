@@ -176,6 +176,7 @@ time.sleep(1)
 # Initializing and Connecting to MQTT server
 try:
     client = MQTTClient(client_id=config.MQTT_CLIENT_ID, server=config.MQTT_SERVER, port=config.MQTT_PORT, user=config.MQTT_USER, password=config.MQTT_KEY)
+    #client = MQTTClient(client_id=config.MQTT_CLIENT_ID, server=config.MQTT_SERVER, port=config.MQTT_PORT, user=config.MQTT_USER, password=config.MQTT_KEY, ssl=True, ssl_params=config.SSL_FILES)
     time.sleep(0.1)
     client.connect()
     print("Connected to %s" % (config.MQTT_SERVER))
