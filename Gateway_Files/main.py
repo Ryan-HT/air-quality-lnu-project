@@ -21,7 +21,7 @@ import config                 # Config.py holding user credential and constants
 import ujson                  # Creating JSON object for MQTT & Telegraf
 from machine import WDT       # Watchdog Timer to reset the board when stuck
 import sys                    # Using sys to print Exception reasons
-import _thread
+import _thread                # Adding thread for mqtt publish handler
 
 # BEGIN SETTINGS
 # Initializing Watchdog Timer to active after 10 minutes
@@ -91,7 +91,7 @@ def send_topic(topicObject, topicName):
 
 
 def pub_sensor_values(indoorTemperature, outdoorTemperature, indoorHumidity, outdoorHumidity, co2, tvoc):
-    pycom.rgbled(0x00ff00) # Status green: online to Adafruit IO
+    pycom.rgbled(0x00ff00) # Status green = publising values
 
     try:
         tempObj = build_json("indoorTemp", indoorTemperature, "outdoorTemp", outdoorTemperature)
